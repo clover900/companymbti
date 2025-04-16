@@ -151,7 +151,14 @@ const mbtiDescriptions: { [key: string]: string } = {
   ENTJ: "이 프로젝트는 내가 책임질게!\n목표를 확실히 세우고 팀을 이끄는 타고난 리더"
 };
 
-const mbtiKeywords = {
+type MBTIType = 'ISTJ' | 'ISFJ' | 'INFJ' | 'INTJ' | 'ISTP' | 'ISFP' | 'INFP' | 'INTP' | 'ESTP' | 'ESFP' | 'ENFP' | 'ENTP' | 'ESTJ' | 'ESFJ' | 'ENFJ' | 'ENTJ';
+
+interface Keyword {
+  text: string;
+  color: string;
+}
+
+const mbtiKeywords: Record<MBTIType, Keyword[]> = {
   'ISTJ': [
     { text: '달력에 빨간펜 체크', color: 'bg-yellow-100' },
     { text: '회의록 장인', color: 'bg-pink-100' },
