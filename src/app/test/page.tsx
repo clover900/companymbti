@@ -419,7 +419,7 @@ export default function MBTITestPage() {
           <div className="space-y-4">
             <a
               href="/"
-              className="inline-block w-full max-w-[280px] bg-gray-100 hover:bg-gray-200 text-gray-600 font-medium py-3 px-6 rounded-lg text-sm transition-all duration-200 hover:scale-105"
+              className="inline-block w-full max-w-[280px] bg-blue-50 hover:bg-blue-100 text-blue-600 border-2 border-blue-200 font-medium py-3 px-6 rounded-lg text-sm transition-all duration-200 hover:scale-105 shadow-sm"
             >
               다시 해보기
             </a>
