@@ -431,15 +431,15 @@ export default function MBTITestPage() {
   }
 
   if (showResult) {
-    const mbti = calculateMBTI();
+    const mbti = calculateMBTI() as MBTIType;
     return (
       <div className="min-h-screen flex items-center justify-center px-4 py-8 bg-white">
         <div className="w-full max-w-[320px] text-center">
           <h2 className="text-2xl font-bold mb-6">내 친구는 {mbti}</h2>
           <div className="mb-8 flex flex-wrap justify-center gap-3 relative min-h-[300px]" ref={resultRef}>
             {mbtiKeywords[mbti]?.map((keyword, index) => {
-              const rotation = Math.floor(Math.random() * 41) - 20; // -20 to +20 degrees
-              const scale = Math.random() * (1.2 - 0.8) + 0.8; // 0.8 to 1.2
+              const rotation = Math.floor(Math.random() * 41) - 20;
+              const scale = Math.random() * (1.2 - 0.8) + 0.8;
               return (
                 <div
                   key={index}
