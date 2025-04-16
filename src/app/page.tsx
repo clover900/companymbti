@@ -10,7 +10,8 @@ export default function Home() {
           alt="회사 MBTI 밈" 
           className="w-full max-w-[360px] h-auto mb-4 rounded-lg"
         />
-        <p className="text-lg mb-8">출근만 하면 달라지는 내 성격!</p>
+        <p className="text-lg mb-2">출근만 하면 달라지는 내 성격!</p>
+        <p className="text-lg mb-8">회사 속 360도 다른 내 MBTI는?</p>
         <a
           href="/test"
           className="inline-block w-full max-w-[280px] bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg text-sm transition-all duration-200 hover:scale-105 shadow-md"
