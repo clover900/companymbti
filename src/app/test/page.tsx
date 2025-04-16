@@ -429,18 +429,9 @@ export default function MBTITestPage() {
     );
   }
 
-  const question = questions[currentQuestion];
-
   return (
     <div className="min-h-screen flex flex-col items-center px-4 pt-12 pb-8 bg-white">
       <div className="w-full max-w-[320px]">
-        <h1 className="text-2xl font-bold text-center mb-4">회사 MBTI</h1>
-        <img 
-          src="/image 75.png" 
-          alt="회사 MBTI 밈" 
-          className="w-full max-w-[360px] h-auto mb-4 rounded-lg"
-        />
-        <p className="text-lg text-center mb-8">출근만 하면 달라지는 내 성격!</p>
         <div className="mb-8">
           <div className="w-full bg-gray-100 rounded-full h-1.5 mb-2">
             <div
@@ -448,25 +439,24 @@ export default function MBTITestPage() {
               style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
             ></div>
           </div>
-          <p className="text-xs text-gray-400">
+          <p className="text-sm text-gray-500 text-right">
             {currentQuestion + 1} / {questions.length}
           </p>
         </div>
 
-        <h2 className="text-base font-semibold mb-8 leading-relaxed text-gray-800">
-          {question.question}
-        </h2>
-
-        <div className="space-y-4">
-          {question.options.map((option, index) => (
-            <button
-              key={index}
-              onClick={() => handleAnswer(option.value)}
-              className="w-full p-4 border border-gray-200 rounded-lg hover:bg-gray-50 active:bg-gray-100 transition-colors text-sm text-left text-gray-700"
-            >
-              {option.text}
-            </button>
-          ))}
+        <div className="mb-8">
+          <h2 className="text-xl font-bold mb-6">{questions[currentQuestion].question}</h2>
+          <div className="space-y-4">
+            {questions[currentQuestion].options.map((option, index) => (
+              <button
+                key={index}
+                onClick={() => handleAnswer(option.value)}
+                className="w-full bg-white border-2 border-gray-200 hover:border-blue-500 text-gray-800 font-medium py-4 px-6 rounded-lg text-left transition-all duration-200 hover:shadow-md"
+              >
+                {option.text}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
