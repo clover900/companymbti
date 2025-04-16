@@ -438,15 +438,14 @@ export default function MBTITestPage() {
           <h2 className="text-2xl font-bold mb-6">내 친구는 {mbti}</h2>
           <div className="mb-8 flex flex-wrap justify-center gap-3 relative min-h-[300px]" ref={resultRef}>
             {mbtiKeywords[mbti]?.map((keyword, index) => {
-              const rotation = Math.floor(Math.random() * 41) - 20;
-              const scale = Math.random() * (1.2 - 0.8) + 0.8;
+              const scale = Math.random() * (1.1 - 0.9) + 0.9; // 0.9 to 1.1
               return (
                 <div
                   key={index}
-                  className={`${keyword.color} px-3 py-2 rounded-lg text-sm font-medium shadow-sm hover:scale-110 transition-transform cursor-default`}
+                  className={`${keyword.color} px-4 py-3 rounded-lg text-base font-medium shadow-sm hover:scale-105 transition-transform cursor-default`}
                   style={{
-                    transform: `rotate(${rotation}deg) scale(${scale})`,
-                    maxWidth: '80%'
+                    transform: `scale(${scale})`,
+                    maxWidth: '90%'
                   }}
                 >
                   {keyword.text}
