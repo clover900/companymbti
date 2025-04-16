@@ -434,11 +434,17 @@ export default function MBTITestPage() {
     const mbti = calculateMBTI() as MBTIType;
     return (
       <div className="min-h-screen flex items-center justify-center px-4 py-8 bg-white">
-        <div className="w-full max-w-[320px] text-center">
-          <h2 className="text-2xl font-bold mb-6">내 친구는 {mbti}</h2>
-          <div className="mb-8 flex flex-wrap justify-center gap-3 relative min-h-[300px]" ref={resultRef}>
+        <div ref={resultRef} className="w-full max-w-[320px] text-center">
+          <div className="mb-8">
+            <h2 className="text-xl font-bold mb-4 text-gray-800">나의 회사 MBTI는</h2>
+            <div className="text-4xl font-bold text-blue-600 mb-6">{mbti}</div>
+            <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
+              {mbtiDescriptions[mbti]}
+            </p>
+          </div>
+          <div className="mb-8 flex flex-wrap justify-center gap-3">
             {mbtiKeywords[mbti]?.map((keyword, index) => {
-              const scale = Math.random() * (1.1 - 0.9) + 0.9; // 0.9 to 1.1
+              const scale = Math.random() * (1.1 - 0.9) + 0.9;
               return (
                 <div
                   key={index}
@@ -456,16 +462,16 @@ export default function MBTITestPage() {
           <div className="space-y-4">
             <button
               onClick={handleShare}
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg text-sm transition-transform hover:scale-105"
+              className="w-full max-w-[280px] bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg text-sm transition-all duration-200 hover:scale-105 shadow-md"
             >
               결과 공유하기
             </button>
-            <button
-              onClick={() => window.location.reload()}
-              className="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-6 rounded-lg text-sm transition-transform hover:scale-105"
+            <a
+              href="/"
+              className="inline-block w-full max-w-[280px] bg-gray-100 hover:bg-gray-200 text-gray-600 font-medium py-3 px-6 rounded-lg text-sm transition-all duration-200 hover:scale-105"
             >
               다시 해보기
-            </button>
+            </a>
           </div>
         </div>
       </div>
