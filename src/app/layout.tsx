@@ -17,8 +17,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4627540690656912"
-          crossOrigin="anonymous"></script>
+        <script data-ad-client="ca-pub-4627540690656912" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       </head>
       <body className={inter.className}>{children}</body>
     </html>
